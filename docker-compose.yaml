@@ -33,17 +33,5 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
-  caddy:
-    image: caddy:2-alpine
-    container_name: caddy
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./docker/Caddyfile:/etc/caddy/Caddyfile
-    depends_on:
-      - nginx
-
 volumes:
   db_data:
